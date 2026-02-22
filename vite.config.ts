@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/CalendarOfHabits/',
+  base: process.env.VERCEL ? '/' : '/CalendarOfHabits/',
 })
