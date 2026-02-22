@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/store.ts","./src/types.ts","./src/utils.ts","./src/vite-env.d.ts","./src/components/calendar.tsx","./src/components/habitpanel.tsx"],"version":"5.7.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/store.ts","./src/types.ts","./src/utils.ts","./src/vite-env.d.ts","./src/components/adminpanel.tsx","./src/components/calendar.tsx","./src/components/habitpanel.tsx","./src/services/analytics.ts"],"version":"5.7.3"}

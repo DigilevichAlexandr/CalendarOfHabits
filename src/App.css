@@ -421,6 +421,126 @@
   font-size: 0.9rem;
 }
 
+/* ========== Admin Link ========== */
+
+.admin-link {
+  margin-left: auto;
+  font-size: 1.3rem;
+  color: var(--text-dim);
+  opacity: 0.4;
+  transition: opacity 0.2s;
+  padding: 4px 8px;
+}
+
+.admin-link:hover {
+  opacity: 1;
+}
+
+/* ========== Admin Panel ========== */
+
+.admin-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+
+.admin-modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  min-width: 340px;
+  position: relative;
+}
+
+.admin-modal h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.admin-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 1.4rem;
+  color: var(--text-dim);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.admin-close:hover {
+  background: var(--surface-hover);
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-form input {
+  padding: 10px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.admin-form input:focus {
+  border-color: var(--accent);
+}
+
+.admin-error {
+  font-size: 0.8rem;
+  color: var(--danger);
+}
+
+.admin-loading {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.admin-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.stat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 16px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
 /* ========== Responsive ========== */
 
 @media (max-width: 700px) {

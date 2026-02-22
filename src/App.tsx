@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react'
 import { Habit } from './types'
 import { loadHabits, saveHabits } from './store'
+import { trackVisit } from './services/analytics'
 import { Calendar } from './components/Calendar'
 import { HabitPanel } from './components/HabitPanel'
+import { AdminPanel } from './components/AdminPanel'
 import './App.css'
 
 export default function App() {
   const [habits, setHabits] = useState<Habit[]>(loadHabits)
   const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [showAdmin, setShowAdmin] = useState(false)
+
+  useEffect(() => { trackVisit() }, [])
 
   useEffect(() => {
     saveHabits(habits)
@@ -55,6 +60,9 @@ export default function App() {
           <path d="M10 20l3 3 6-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <h1>Календарь привычек</h1>
+        <button className="admin-link" onClick={() => setShowAdmin(true)} title="Админка">
+          ⚙
+        </button>
       </header>
 
       <main className="app-main">
@@ -71,6 +79,8 @@ export default function App() {
           onToggleDay={toggleDay}
         />
       </main>
+
+      {showAdmin && <AdminPanel onClose={() => setShowAdmin(false)} />}
     </div>
   )
 }
